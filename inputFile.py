@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import datetime
 import json
+import yaml
 import glob
 import re
 
@@ -79,4 +80,12 @@ class inputYml(inputFile):
         super().__init__(input)
     
     def readFile(self):
-        return super().readFile()
+        self.data_dict = {}
+        with open( self.input_file, encoding="utf-8") as file:
+            data = yaml.load(file, Loader=yaml.FullLoader)
+            for i in data["txt_fill"]:
+                self.data_dict = i
+                if self.data_dict["Date_es_date"] == "":
+                    self.data_dict["Date_es_date"] = str(date_now)
+            file.close()
+        return self.data_dict

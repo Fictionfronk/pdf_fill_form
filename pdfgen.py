@@ -35,6 +35,11 @@ class PDFgen:
         self.data_dict = inputFile.inputText(self.input).readFile()
         return self.data_dict
 
+    def readYml(self):
+        self.data_dict = {}
+        self.data_dict = inputFile.inputYml(self.input).readFile()
+        return self.data_dict
+        
     def fill_pdf(self, template, data):
         for page in template.pages:
             annotations = page[ANNOT_KEY]

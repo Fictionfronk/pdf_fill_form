@@ -24,7 +24,7 @@ if __name__ == "__main__":
     elif ".txt" in args["input"]:
         data_dict = command.readText()
     elif ".yml" in args["input"]:
-        pass
+        data_dict = command.readYml()
 
     command.fill_pdf(pdf_template, data_dict)
     print("done!")
