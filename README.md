@@ -2,4 +2,4 @@
 
 Generate PDF
 
-python pdfgen.py -i .json -o outputfile.pdf -t template.pdf
+python pdfgen.py -i .json/.txt/.yml -o outputfile.pdf -t template.pdf
