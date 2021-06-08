@@ -1,30 +1,12 @@
-txt_fill:
-  -
-    Date_es_date:
-    name: นางสาว ณัฐธิดา ปัญญา
-    id: 6010613385
-    company: คณะวิศวกรรมศาสตร์ มหาวิทยาลัยธรรมศาสตร์
-    department: วิศวกรรมไฟฟ้าและคอมพิวเตอร์
-    total_leave: 0
-    total_late: 0
-    total_absent: 0
-    date_1: 01/06/63
-    in_1: 8:30 น.
-    out_1: 17:30 น.
-    job_1: เรียนรู้การใช้เว็บไซต์ trello
-    date_2: 02/06/63
-    in_2: 8:30 น.
-    out_2: 17:30 น.
-    job_2: ทดลองใช้เว็บไซต์ trello
-    date_3: 03/06/63
-    in_3: 8:30 น.
-    out_3: 17:30 น.
-    job_3: สร้าง board เป็นของตัวเองใน trello
-    date_4: 04/06/63
-    in_4: 8:30 น.
-    out_4: 17:30 น.
-    job_4: ตกแต่ง board ที่สร้างไว้ใน trello
-    date_5: 05/06/63
-    in_5: 8:30 น.
-    out_5: 17:30 น.
-    job_5: พูดคุยและเรียนรู้รายละเอียดงาน
+row:
+  - # Person 1
+    Date_es_:date: 
+    Name: 'รธีพัฒน์ พระจันทร์ทอง'
+    Address_1: 99
+    Address_2: 18
+    Address_3: '-'
+    Address_4: 'คลองหนึ่ง'
+    Address_5: 'คลองหลวง'
+    Address_6: 'ปทุมธานี'
+    Postal_code: 12120
+    Phone_Number: '0626088751'
