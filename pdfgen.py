@@ -1,10 +1,5 @@
 import pdfrw
-import datetime
 import inputFile
-
-data_dict = {}
-one_year_from_now = datetime.datetime.now()
-date_now = one_year_from_now.strftime("%d/%m/%Y")
 
 ANNOT_KEY = "/Annots"
 ANNOT_FIELD_KEY = "/T"
@@ -13,11 +8,10 @@ ANNOT_RECT_KEY = "/Rect"
 SUBTYPE_KEY = "/Subtype"
 WIDGET_SUBTYPE_KEY = "/Widget"
 
-
 class PDFgen:
     def __init__(self, option):
         #print(option["input"])
-        if ".json" in option["input"]:
+        if ".json" or ".txt" or ".yml" in option["input"]:
             self.input = option["input"]
         if ".pdf" in option["output"]:
             self.output = option["output"]
@@ -34,6 +28,11 @@ class PDFgen:
     def readJson(self):
         self.data_dict = {}
         self.data_dict = inputFile.inputJson(self.input).readFile()
+        return self.data_dict
+
+    def readText(self):
+        self.data_dict = {}
+        self.data_dict = inputFile.inputText(self.input).readFile()
         return self.data_dict
 
     def fill_pdf(self, template, data):

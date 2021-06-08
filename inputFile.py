@@ -1,9 +1,23 @@
 from abc import ABC, abstractmethod
 import datetime
 import json
+import glob
+import re
 
 one_year_from_now = datetime.datetime.now()
 date_now = one_year_from_now.strftime("%d/%m/%Y")
+data_dict = {
+        "Date_es_:date": "",
+        "Name": "",
+        "Address_1": "",
+        "Address_2": "",
+        "Address_3": "",
+        "Address_4": "",
+        "Address_5": "",
+        "Address_6": "",
+        "Postal_code": "",
+        "Phone_Number": ""
+    }
 
 class inputFile(ABC):
 
@@ -37,7 +51,27 @@ class inputText(inputFile):
         super().__init__(input)
     
     def readFile(self):
-        return super().readFile()
+        txt_file = self.input_file
+        with open(txt_file, "r", encoding="utf-8") as file:
+            lines = file.readlines()
+            text = ""
+            for line in lines:
+                #print(line)
+                text += line
+                text_list = text.split("\n")
+                #print(text_list)
+            file.close()
+        i = 0
+        for key in data_dict.keys():
+            if key == "Date_es_:date":
+                data_dict[key] = str(date_now)
+            else:
+                data_dict[key] = text_list[i]
+                i += 1
+            if i == len(text_list):
+                break
+        #print(data_dict)
+        return data_dict
 
 class inputYml(inputFile):
 

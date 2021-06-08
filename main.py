@@ -19,6 +19,12 @@ if __name__ == "__main__":
 
     pdf_template = command.readPDF(pdf_template)
 
-    data_dict = command.readJson()
+    if ".json" in args["input"]:
+        data_dict = command.readJson()
+    elif ".txt" in args["input"]:
+        data_dict = command.readText()
+    elif ".yml" in args["input"]:
+        pass
+
     command.fill_pdf(pdf_template, data_dict)
     print("done!")
