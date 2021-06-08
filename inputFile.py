@@ -85,7 +85,7 @@ class inputYml(inputFile):
             data = yaml.load(file, Loader=yaml.FullLoader)
             for i in data["txt_fill"]:
                 self.data_dict = i
-                if self.data_dict["Date_es_date"] == "":
-                    self.data_dict["Date_es_date"] = str(date_now)
+                if self.data_dict["Date_es_:date"] == "":
+                    self.data_dict["Date_es_:date"] = str(date_now)
             file.close()
         return self.data_dict

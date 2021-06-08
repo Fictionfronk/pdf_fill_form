@@ -1,6 +1,6 @@
-row:
+txt_fill:
   - # Person 1
-    Date_es_:date: 
+    Date_es_:date: ''
     Name: 'รธีพัฒน์ พระจันทร์ทอง'
     Address_1: 99
     Address_2: 18
